@@ -26,8 +26,6 @@ jobs:
         with:
           node-version: 18
       - run: chmod -R u+x .
-      - run: npm ci
-      - run: npm run build
       - name: 'Upload prepared files'
         uses: actions/upload-artifact@v3
         with:
