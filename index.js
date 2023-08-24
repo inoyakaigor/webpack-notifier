@@ -39,9 +39,9 @@ WebpackNotifierPlugin.prototype.compileEndOptions = function (stats) {
         ? this.options.contentImage
         : DEFAULT_LOGO;
 
-    var successImage = path.resolve('./img/ok.ico');
-    var warningsImage = path.resolve('./img/warn.ico');
-    var errorsImage = path.resolve('./img/error.ico');
+    var successImage = path.resolve(__dirname + '/img/ok.ico');
+    var warningsImage = path.resolve(__dirname + '/img/warn.ico');
+    var errorsImage = path.resolve(__dirname + '/img/error.ico');
     if (typeof imageFromOptions == 'object') {
         successImage = imageFromOptions['success']
         warningsImage = imageFromOptions['warning']
