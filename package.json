@@ -21,9 +21,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/inoyakaigor/webpack-notifier.git"
+    "url": "https://github.com/inoyakaigor/webpack-notifier-2.git"
   },
-  "author": "Igor «InoY» Zviagintsev <inoyakaigor@ya.ru> (https://inoy.dev)",
+  "author": "Igor «InoY» Zviagintsev <inoyakaigor@ya.ru> (https://inoy.dev), Tobias Bieniek",
   "license": "ISC",
   "dependencies": {
     "node-notifier": "^9.0.1",
