@@ -5,7 +5,8 @@
   "main": "index.js",
   "files": [
     "index.js",
-    "logo.png"
+    "logo.png",
+    "img/*"
   ],
   "scripts": {
     "test": "eslint index.js"
