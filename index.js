@@ -5,7 +5,7 @@ var notifier = require('node-notifier');
 
 var DEFAULT_LOGO = path.join(__dirname, 'logo.png');
 
-var WebpackNotifierPlugin = module.exports = function(options) {
+var WebpackNotifierPlugin = module.exports = function (options) {
     this.options = options || {};
     this.lastBuildSucceeded = false;
     this.isFirstBuild = true;
@@ -26,7 +26,7 @@ function findFirstDFS(compilation, key) {
     }
 }
 
-WebpackNotifierPlugin.prototype.compileEndOptions = function(stats) {
+WebpackNotifierPlugin.prototype.compileEndOptions = function (stats) {
     if (this.isFirstBuild) {
         this.isFirstBuild = false;
 
@@ -36,12 +36,12 @@ WebpackNotifierPlugin.prototype.compileEndOptions = function(stats) {
     }
 
     var imageFromOptions = ('contentImage' in this.options)
-    ? this.options.contentImage
-    : DEFAULT_LOGO;
+        ? this.options.contentImage
+        : DEFAULT_LOGO;
 
-    var successImage = '';
-    var warningsImage = '';
-    var errorsImage = '';
+    var successImage = path.resolve('./img/ok.ico');
+    var warningsImage = path.resolve('./img/warn.ico');
+    var errorsImage = path.resolve('./img/error.ico');
     if (typeof imageFromOptions == 'object') {
         successImage = imageFromOptions['success']
         warningsImage = imageFromOptions['warning']
@@ -64,7 +64,7 @@ WebpackNotifierPlugin.prototype.compileEndOptions = function(stats) {
     } else if ((!this.lastBuildSucceeded || this.options.alwaysNotify) && !this.options.onlyOnError) {
         this.lastBuildSucceeded = true;
         return {
-            message: (hasEmoji ? '✅ ' : '') + 'Build successful',
+            message: (hasEmoji ? '✅ ' : '') + 'Build is successful',
             contentImage: successImage,
             status: 'success'
         };
@@ -95,7 +95,7 @@ WebpackNotifierPlugin.prototype.compileEndOptions = function(stats) {
     }
 };
 
-WebpackNotifierPlugin.prototype.compilationDone = function(stats) {
+WebpackNotifierPlugin.prototype.compilationDone = function (stats) {
     var {message, contentImage, status} = this.compileEndOptions(stats);
     if (message) {
         var title = this.options.title ? this.options.title : 'Webpack'
@@ -104,8 +104,8 @@ WebpackNotifierPlugin.prototype.compilationDone = function(stats) {
         }
 
         var icon = (os.platform() === 'win32' || os.platform() === 'linux')
-        ? contentImage
-        : undefined
+            ? contentImage
+            : undefined
 
         notifier.notify({
             ...this.options,
@@ -117,9 +117,9 @@ WebpackNotifierPlugin.prototype.compilationDone = function(stats) {
     }
 };
 
-WebpackNotifierPlugin.prototype.apply = function(compiler) {
+WebpackNotifierPlugin.prototype.apply = function (compiler) {
     if (compiler.hooks) {
-        var plugin = { name: 'Notifier' };
+        var plugin = {name: 'Notifier'};
 
         compiler.hooks.done.tap(plugin, this.compilationDone.bind(this));
     } else {

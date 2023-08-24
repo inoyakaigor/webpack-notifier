@@ -22,7 +22,7 @@
     "type": "git",
     "url": "https://github.com/inoyakaigor/webpack-notifier.git"
   },
-  "author": "Igor «InoY» Zvaygintsev <inoyakaigor@ya.ru> (https://inoyakaigor.ru)",
+  "author": "Igor «InoY» Zviagintsev <inoyakaigor@ya.ru> (https://inoy.dev)",
   "license": "ISC",
   "dependencies": {
     "node-notifier": "^9.0.1",
