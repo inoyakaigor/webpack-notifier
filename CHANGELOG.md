@@ -1,6 +1,13 @@
 
 Changelog
 ===============================================================================
+v2.4.5
+-------------------------------------------------------------------------------
+- Add default images for notifications
+- Fix spelling
+- Move from Travis CI to Github actions
+- A bit polishing
+
 v2.3.2
 -------------------------------------------------------------------------------
 Downgrade `strip-ansi` to v6 for fix building issues
