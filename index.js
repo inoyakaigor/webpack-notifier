@@ -99,6 +99,7 @@ WebpackNotifierPlugin.prototype.compilationDone = function (stats) {
     var {message, contentImage, status} = this.compileEndOptions(stats);
     if (message) {
         var title = this.options.title ? this.options.title : 'Webpack'
+
         if (typeof title === 'function') {
             title = title({message: message, status: status})
         }
@@ -107,12 +108,14 @@ WebpackNotifierPlugin.prototype.compilationDone = function (stats) {
             ? contentImage
             : undefined
 
+        var timeout = this.options.timeout ? this.options.timeout : 10
         notifier.notify({
             ...this.options,
             title,
             message,
             contentImage,
-            icon
+            icon,
+            timeout
         });
     }
 };
