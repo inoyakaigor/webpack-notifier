@@ -1,6 +1,5 @@
 # Webpack Notifier 2
 
-[![Build Status](https://www.travis-ci.com/inoyakaigor/webpack-notifier-2.svg)](https://www.travis-ci.com/inoyakaigor/webpack-notifier-2)
 [![npm Version](https://img.shields.io/npm/v/webpack-notifier-2.svg)](https://www.npmjs.com/package/webpack-notifier-2)
 
 This is a [webpack](http://webpack.github.io/) plugin that uses the
