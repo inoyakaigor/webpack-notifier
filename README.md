@@ -1,5 +1,8 @@
 # Webpack Notifier 2
 
+<!--![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/inoyakaigor/webpack-notifier-2/npm-publish.yml)-->
+
+![badge](https://github.com/inoyakaigor/webpack-notifier-2/actions/workflows/npm-publish.yml/badge.svg)
 [![npm Version](https://img.shields.io/npm/v/webpack-notifier-2.svg)](https://www.npmjs.com/package/webpack-notifier-2)
 
 This is a [webpack](http://webpack.github.io/) plugin that uses the
